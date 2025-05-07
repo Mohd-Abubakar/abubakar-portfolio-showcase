@@ -4,55 +4,27 @@ import { Card, CardContent } from "@/components/ui/card";
 const skills = [
   {
     category: "Programming Languages",
-    items: [
-      { name: "Python", level: 90 },
-      { name: "Java", level: 85 },
-      { name: "JavaScript", level: 80 },
-      { name: "C", level: 75 }
-    ]
+    items: ["Python", "Java", "JavaScript", "C"]
   },
   {
     category: "Web Development",
-    items: [
-      { name: "HTML/CSS", level: 85 },
-      { name: "React", level: 80 },
-      { name: "Node.js", level: 75 },
-      { name: "RESTful APIs", level: 85 }
-    ]
+    items: ["HTML/CSS", "React", "Node.js", "RESTful APIs"]
   },
   {
     category: "Database Management",
-    items: [
-      { name: "MySQL", level: 90 },
-      { name: "MongoDB", level: 80 },
-      { name: "PostgreSQL", level: 75 }
-    ]
+    items: ["MySQL", "MongoDB", "PostgreSQL"]
   },
   {
     category: "Machine Learning & Data Science",
-    items: [
-      { name: "Scikit-learn", level: 85 },
-      { name: "TensorFlow", level: 75 },
-      { name: "Data Analysis", level: 90 },
-      { name: "Data Visualization", level: 85 }
-    ]
+    items: ["Scikit-learn", "TensorFlow", "Data Analysis", "Data Visualization"]
   },
   {
     category: "Cloud & DevOps",
-    items: [
-      { name: "AWS", level: 75 },
-      { name: "Docker", level: 70 },
-      { name: "Git", level: 85 }
-    ]
+    items: ["AWS", "Docker", "Git"]
   },
   {
     category: "Soft Skills",
-    items: [
-      { name: "Problem Solving", level: 95 },
-      { name: "Team Collaboration", level: 90 },
-      { name: "Communication", level: 85 },
-      { name: "Time Management", level: 80 }
-    ]
+    items: ["Problem Solving", "Team Collaboration", "Communication", "Time Management"]
   }
 ];
 
@@ -71,22 +43,11 @@ const SkillsSection = () => {
             >
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-4 text-gray-800">{skillCategory.category}</h3>
-                <div className="space-y-4">
+                <ul className="list-disc pl-5 space-y-2">
                   {skillCategory.items.map((skill) => (
-                    <div key={skill.name} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium text-gray-700">{skill.name}</span>
-                        <span className="text-sm text-gray-500">{skill.level}%</span>
-                      </div>
-                      <div className="skill-bar">
-                        <div 
-                          className="skill-progress" 
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
+                    <li key={skill} className="text-gray-700">{skill}</li>
                   ))}
-                </div>
+                </ul>
               </CardContent>
             </Card>
           ))}
